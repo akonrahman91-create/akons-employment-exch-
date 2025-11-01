@@ -1,65 +1,151 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Akon Employment Exchange</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akon Employment Exchange</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .banner {
+            background-color: #fffae6;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            color: #444;
+            border-bottom: 1px solid #ccc;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #004d99;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #004d99;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #999;
+        }
+        footer {
+            background-color: #004d99;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1>Akon Employment Exchange</h1>
-      <div class="nav-right">
-        <a href="signin.html" id="signinLink">Sign in</a>
-      </div>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Your Skills. Your City. Your Future.</h2>
-        <p>Sign in for free to browse jobs and workers. Create a profile to be contactable or to contact others.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="jobseekers.html">I'm a Job Seeker</a>
-          <a class="btn" href="employers.html">I'm an Employer</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1520975913339-1f7f4f5d3d33?auto=format&fit=crop&w=1200&q=60" alt="Hiring and jobs">
-      </div>
-    </section>
+<header>Akon Employment Exchange</header>
+<div class="banner">💡 Introductory Offer: Registration is free for a limited period. Payment options coming soon.</div>
 
-    <section class="features">
-      <div class="feature"><h3>Free Sign-in</h3><p>Anyone can sign in with name & mobile to view listings.</p></div>
-      <div class="feature"><h3>Flexible Payments</h3><p>Employers: ₹2/contact or ₹300/yr unlimited. Seekers: ₹200 profile or ₹300 premium.</p></div>
-      <div class="feature"><h3>Ratings & Feedback</h3><p>Both sides can rate each other and the platform.</p></div>
-    </section>
+<main>
 
-    <section class="how">
-      <h2>How it works</h2>
-      <ol>
-        <li>Sign in for free (Name + Mobile).</li>
-        <li>Search jobs or workers by task and location.</li>
-        <li>Create a paid profile to be contactable, or pay per-contact as an employer.</li>
-      </ol>
-    </section>
-  </main>
+<section>
+<h2>Job Seeker Registration</h2>
+<form action="https://formspree.io/f/meopplzn" method="POST">
+    <label>Name:</label><input type="text" name="name" required>
+    <label>Mobile:</label><input type="text" name="mobile" required>
+    <label>Age (optional):</label><input type="number" name="age">
+    <label>Gender (optional):</label>
+    <select name="gender">
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    <label>Location:</label><input type="text" name="location" required>
+    <label>Job Duration:</label>
+    <select name="duration">
+        <option>Hourly</option>
+        <option>Part-time</option>
+        <option>Full-time</option>
+        <option>Permanent</option>
+    </select>
+    <label>Job Skills / Type:</label>
+    <input type="text" name="skills">
+    <label>Other (if not listed):</label>
+    <input type="text" name="other_skills">
+    <button type="submit">Register Without Payment</button>
+    <p>💳 Payment Options (Inactive for now):</p>
+    <button disabled>Pay ₹200</button>
+</form>
+</section>
 
-  <footer class="site-footer">
-    <div class="container">
-      © 2025 Akon Amin Pvt Ltd · Akon Employment Exchange · <a href="ratings.html">Rate Our Site</a>
-    </div>
-  </footer>
+<section>
+<h2>Employer Registration</h2>
+<form action="https://formspree.io/f/meopplzn" method="POST">
+    <label>Name:</label><input type="text" name="name" required>
+    <label>Mobile:</label><input type="text" name="mobile" required>
+    <label>Company (optional):</label><input type="text" name="company">
+    <label>Location:</label><input type="text" name="location" required>
+    <label>Job Duration:</label>
+    <select name="duration">
+        <option>Hourly</option>
+        <option>Part-time</option>
+        <option>Full-time</option>
+        <option>Permanent</option>
+    </select>
+    <label>Type of Worker Needed:</label>
+    <input type="text" name="worker_type">
+    <label>Other (if not listed):</label>
+    <input type="text" name="other_worker">
+    <button type="submit">Register Without Payment</button>
+    <p>💳 Payment Options (Inactive for now):</p>
+    <button disabled>Pay ₹2 (per contact)</button>
+    <button disabled>Pay ₹300 (Premium - 1 year)</button>
+</form>
+</section>
 
-  <script src="scripts.js"></script>
-  <script>
-    // show sign-in status
-    document.addEventListener('DOMContentLoaded', function(){
-      const user = JSON.parse(localStorage.getItem('signedIn')||'null');
-      const link = document.getElementById('signinLink');
-      if(user) link.textContent = user.name + " (signed in)";
-    });
-  </script>
+<section>
+<h2>Website Rating & Feedback</h2>
+<form action="https://formspree.io/f/meopplzn" method="POST">
+    <label>Rate Our Platform (1–5 stars):</label>
+    <select name="rating">
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+    </select>
+    <label>Comments or Suggestions:</label>
+    <textarea name="comments"></textarea>
+    <button type="submit">Submit Feedback</button>
+</form>
+</section>
+
+</main>
+
+<footer>© 2025 Akon Employment Exchange | All Rights Reserved</footer>
+
 </body>
 </html>
