@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Employers — Akon Employment Exchange</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <header class="site-header"><div class="container header-inner"><h1>Akon Employment Exchange</h1><nav class="main-nav"><a href="index.html">Home</a><a href="jobseekers.html">For Job Seekers</a></nav></div></header>
+  <main class="container">
+    <h2>Search Workers (Free)</h2>
+    <p>Search by task / skill and location. Contact details are locked until you pay.</p>
+
+    <div class="form-card">
+      <form id="searchForm" onsubmit="return false">
+        <div class="form-row">
+          <div class="field"><label>Task / Job Type</label><input id="searchSkill"></div>
+          <div class="field"><label>City</label><input id="searchCity"></div>
+          <div class="field"><label>State</label><input id="searchState"></div>
+        </div>
+        <div style="margin-top:10px;"><button class="btn primary" id="searchBtn">Search</button></div>
+      </form>
+    </div>
+
+    <section id="results" class="cards"></section>
+
+    <hr style="margin:18px 0">
+
+    <h3>Create Employer Profile / Post Job (Paid)</h3>
+    <div class="form-card">
+      <form id="postForm" action="https://formspree.io/f/meopplzn" method="POST">
+        <input type="hidden" name="_subject" value="New Employer Profile / Job Post">
+        <div class="form-row">
+          <div class="field"><label>Company / Contact Person</label><input name="company"></div>
+          <div class="field"><label>Mobile</label><input name="mobile"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>City</label><input name="city"></div>
+          <div class="field"><label>State</label><input name="state"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Type of Worker Needed</label>
+            <select name="worker_type" id="worker_type" onchange="toggleOther('worker_type','otherWorker')">
+              <option value="">Select</option><option>Electrician</option><option>Driver</option><option>Plumber</option><option>Cook</option><option>Sales</option><option>Security</option><option>Housekeeping</option><option>IT Support</option><option value="Other">Other</option>
+            </select>
+            <input type="text" name="otherWorker" id="otherWorker" placeholder="Please describe the worker you need" style="display:none;margin-top:8px;">
+          </div>
+          <div class="field"><label>Experience Required (years)</label><input name="experience"></div>
+        </div>
+        <p class="muted">Choose a payment option to create your employer profile and access contacts.</p>
+        <div style="display:flex;gap:10px;margin-top:10px;">
+          <button type="button" class="btn" onclick="openPayment('2','view_contact')">Pay ₹2 — View Contact</button>
+          <button type="button" class="btn" onclick="openPayment('200','post_job')">Pay ₹200 — Post Job / Create Profile</button>
+          <button type="button" class="btn primary" onclick="openPayment('300','employer_premium')">Pay ₹300 — Premium (1yr)</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-card">
+      <h3>Rate a Worker</h3>
+      <form action="https://formspree.io/f/meopplzn" method="POST">
+        <input type="hidden" name="_subject" value="Worker Rating from Employer">
+        <div class="form-row">
+          <div class="field"><label>Worker Name</label><input name="worker_name"></div>
+          <div class="field"><label>Your Rating</label><select name="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+        </div>
+        <div class="form-row"><div class="field"><label>Comments</label><textarea name="comment" rows="3"></textarea></div></div>
+        <div style="margin-top:10px;"><button class="btn primary" type="submit">Submit Rating</button></div>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container">© 2025 Akon Amin Pvt Ltd</div></footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

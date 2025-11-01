@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in — Akon Employment Exchange</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <header class="site-header"><div class="container header-inner"><h1>Akon Employment Exchange</h1></div></header>
+  <main class="container">
+    <div class="form-card">
+      <h2>Sign in (free)</h2>
+      <p>Enter your name and mobile number to continue. No OTP in demo mode.</p>
+      <form id="signinForm" onsubmit="return false">
+        <div class="form-row">
+          <div class="field"><label>Name</label><input id="si_name" required></div>
+          <div class="field"><label>Mobile Number</label><input id="si_mobile" required></div>
+        </div>
+        <div style="margin-top:12px;">
+          <button class="btn primary" id="siBtn">Continue</button>
+          <a class="btn" href="index.html">Cancel</a>
+        </div>
+      </form>
+    </div>
+    <p class="muted">This demo stores your name & mobile in your browser only.</p>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

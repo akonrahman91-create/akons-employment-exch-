@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akon Employment Exchange</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Akon Employment Exchange</h1>
+      <div class="nav-right">
+        <a href="signin.html" id="signinLink">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Your Skills. Your City. Your Future.</h2>
+        <p>Sign in for free to browse jobs and workers. Create a profile to be contactable or to contact others.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="jobseekers.html">I'm a Job Seeker</a>
+          <a class="btn" href="employers.html">I'm an Employer</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1520975913339-1f7f4f5d3d33?auto=format&fit=crop&w=1200&q=60" alt="Hiring and jobs">
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature"><h3>Free Sign-in</h3><p>Anyone can sign in with name & mobile to view listings.</p></div>
+      <div class="feature"><h3>Flexible Payments</h3><p>Employers: ₹2/contact or ₹300/yr unlimited. Seekers: ₹200 profile or ₹300 premium.</p></div>
+      <div class="feature"><h3>Ratings & Feedback</h3><p>Both sides can rate each other and the platform.</p></div>
+    </section>
+
+    <section class="how">
+      <h2>How it works</h2>
+      <ol>
+        <li>Sign in for free (Name + Mobile).</li>
+        <li>Search jobs or workers by task and location.</li>
+        <li>Create a paid profile to be contactable, or pay per-contact as an employer.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 Akon Amin Pvt Ltd · Akon Employment Exchange · <a href="ratings.html">Rate Our Site</a>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    // show sign-in status
+    document.addEventListener('DOMContentLoaded', function(){
+      const user = JSON.parse(localStorage.getItem('signedIn')||'null');
+      const link = document.getElementById('signinLink');
+      if(user) link.textContent = user.name + " (signed in)";
+    });
+  </script>
+</body>
+</html>

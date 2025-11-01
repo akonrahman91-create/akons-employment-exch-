@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Job Seeker — Akon Employment Exchange</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <header class="site-header"><div class="container header-inner"><h1>Akon Employment Exchange</h1><nav class="main-nav"><a href="index.html">Home</a><a href="employers.html">For Employers</a></nav></div></header>
+  <main class="container">
+    <h2>Register as Job Seeker</h2>
+    <p>Signed-in users can view listings. Create a paid profile to appear in employer searches.</p>
+
+    <div class="form-card">
+      <form id="seekerForm" action="https://formspree.io/f/meopplzn" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Job Seeker Profile">
+        <div class="form-row">
+          <div class="field"><label>Full name</label><input name="name" id="name"></div>
+          <div class="field"><label>Mobile number</label><input name="mobile" id="mobile"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Gender (optional)</label>
+            <select name="gender" id="gender">
+              <option value="">Prefer not to say</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+          <div class="field"><label>Age (optional)</label><input type="number" name="age" id="age" min="16" max="75"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label>City</label><input name="city" id="city"></div>
+          <div class="field"><label>State</label><input name="state" id="state"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label>Job Skill / Profession</label>
+            <select name="skill" id="skill" onchange="toggleOther('skill','otherSkill')">
+              <option value="">Select</option>
+              <option>Electrician</option><option>Driver</option><option>Plumber</option><option>Cook</option><option>Carpenter</option><option>Sales</option><option>Security</option><option>Housekeeping</option><option>IT Support</option><option>Teacher</option><option>Labour</option><option value="Other">Other</option>
+            </select>
+            <input type="text" name="otherSkill" id="otherSkill" placeholder="Please specify your profession" style="display:none;margin-top:8px;">
+          </div>
+          <div class="field"><label>Experience (years)</label><input type="number" name="experience" id="experience" min="0" max="60"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label>Job Type / Period</label>
+            <select name="jobtype" id="jobtype"><option>Part-Time (Hourly)</option><option>Contract (Short-Term)</option><option>Full-Time (Permanent)</option></select></div>
+          <div class="field"><label>Upload Resume (optional)</label><input type="file" name="resume"></div>
+        </div>
+
+        <p class="muted">Choose a plan to publish your profile.</p>
+        <div style="display:flex;gap:10px;margin-top:10px;">
+          <button type="button" class="btn" onclick="openPayment('200','jobseeker_basic')">Pay ₹200 — Basic</button>
+          <button type="button" class="btn primary" onclick="openPayment('300','jobseeker_premium')">Pay ₹300 — Premium</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-card">
+      <h3>Rate an Employer</h3>
+      <form action="https://formspree.io/f/meopplzn" method="POST">
+        <input type="hidden" name="_subject" value="Employer Rating from Seeker">
+        <div class="form-row">
+          <div class="field"><label>Employer / Company Name</label><input name="rated_company"></div>
+          <div class="field"><label>Your Rating</label>
+            <select name="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+        </div>
+        <div class="form-row"><div class="field"><label>Comments</label><textarea name="comment" rows="3"></textarea></div></div>
+        <div style="margin-top:10px;"><button class="btn primary" type="submit">Submit Rating</button></div>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container">© 2025 Akon Amin Pvt Ltd</div></footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
